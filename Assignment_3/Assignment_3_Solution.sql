@@ -1,16 +1,13 @@
---Values of Department 
 INSERT INTO Department VALUES (101, 'Civil Engineering', 'Block A');
-INSERT INTO Department VALUES (102, 'Mechanical Engineering', 'Block B');
-INSERT INTO Department VALUES (105, 'Computer Science and Engineering', 'Block C');
-INSERT INTO Department VALUES (110, 'Electrical and Electronics Engineering', 'Block D');
-INSERT INTO Department VALUES (118, '3D Animation and Graphics', 'Block E');
-INSERT INTO Department VALUES (119, 'Civil Engineering with Computer Application', 'Block F');
-INSERT INTO Department VALUES (157, 'Computer Science and Engineering (AIML)', 'Block G');
+INSERT INTO Department VALUES(102,'Mechanical Engineering','Block B');
+INSERT INTO Department VALUES(105,'Computer Science Engineering', 'Block C');
+INSERT INTO Department VALUES(110,'Electrical and Electronics Engineering','Block D');
+INSERT INTO Department VALUES(118,'3D Animation and Graphics','Block E');
+INSERT INTO Department VALUES(119,'Civil Engineering with Computer Application','Block F');
+INSERT INTO Department VALUES(157,'Computer Science and Engineering (AIML)','Block G');
 
 
---Vlaues of Student
-
---Civil
+--CE
 INSERT INTO Student VALUES (23101128001, 'Sachin Das', DATE '2004-05-12', 'M', '8347265910', 101);
 INSERT INTO Student VALUES (23101128002, 'Aarav Dhanraj', DATE '2004-08-20', 'M', '9124587036', 101);
 INSERT INTO Student VALUES (23101128003, 'Kunal Pandit', DATE '2003-11-15', 'M', '7894512638', 101);
@@ -21,8 +18,7 @@ INSERT INTO Student VALUES (23101128007, 'William Kumar Das', DATE '2003-07-05',
 INSERT INTO Student VALUES (23101128008, 'Raju Kumar', DATE '2004-03-22', 'M', '8563209741', 101);
 INSERT INTO Student VALUES (23101128009, 'Prashant Kumar', DATE '2003-10-30', 'M', '9326087451', 101);
 INSERT INTO Student VALUES (23101128010, 'Sunny Kumar', DATE '2004-06-14', 'M', '7815942603', 101);
-
---Mechanical
+--ME
 INSERT INTO Student VALUES (23102128001, 'Aman Kumar Singh', DATE '2004-02-14', 'M', '9123456781', 102);
 INSERT INTO Student VALUES (23102128002, 'Pravi Ranjan', DATE '2003-11-08', 'M', '9234567812', 102);
 INSERT INTO Student VALUES (23102128003, 'Sanoj Kumar', DATE '2004-06-19', 'M', '9345678123', 102);
@@ -82,6 +78,7 @@ INSERT INTO Student VALUES (23119128012, 'Ram Krishan Tiwari', DATE '2003-11-19'
 INSERT INTO Student VALUES (23119128013, 'Rajeev Kumar', DATE '2004-04-09', 'M', '9125600100', 119);
 
 --CSE AiMl
+INSERT INTO Student VALUES (23157128054, 'Tannu Kumari', DATE '2004-03-12', 'F', '9126700011', 157);
 INSERT INTO Student VALUES (23157128001, 'Simran Kumari', DATE '2004-03-12', 'F', '9126700011', 157);
 INSERT INTO Student VALUES (23157128002, 'Harshit Kumar', DATE '2003-11-05', 'M', '9126700022', 157);
 INSERT INTO Student VALUES (23157128003, 'Suraj Kumar', DATE '2004-01-18', 'M', '9126700033', 157);
@@ -93,11 +90,10 @@ INSERT INTO Student VALUES (23157128011, 'Navin Kumar', DATE '2004-04-21', 'M', 
 INSERT INTO Student VALUES (23157128012, 'Arman Shandilya', DATE '2003-10-16', 'M', '9126700099', 157);
 INSERT INTO Student VALUES (23157128013, 'Prince Kumar', DATE '2004-06-08', 'M', '9126700100', 157);
 INSERT INTO Student VALUES (23157128014, 'Kumar Nitesh', DATE '2003-08-29', 'M', '9126700111', 157);
-INSERT INTO Student VALUES (23157128015, 'Aditya Ashish Kumar', DATE '2004-01-30', 'M', '9126700122', 157);
-INSERT INTO Student VALUES (23157128016, 'Anubhav Kumar', DATE '2003-11-19', 'M', '9126700133', 157);
 
-
-
+SELECT * FROM Department;
+SELECT * FROM Student;
+COMMIT;
 --Values of Faculty
 INSERT INTO Faculty VALUES (501, 'Kunal Kumar', 'Associate Professor', 'kunal1989kumar@gmail.com', 101);
 INSERT INTO Faculty VALUES (502, 'Akhilesh Kumar', 'Associate Professor', 'akhileshkumar3804@gmail.com', 101);
@@ -126,6 +122,7 @@ INSERT INTO Faculty VALUES (527, 'Abhishek Kumar', 'Associate Professor', 'abhis
 INSERT INTO Faculty VALUES (525, 'N. Kumar', 'Associate Professor', 'n.kumar@gmail.com', 119);
 INSERT INTO Faculty VALUES (523, 'Praveen Kumar', 'Assistant Professor', 'praveenkumaryadav782@gmail.com', 157);
 
+SELECT * FROM Faculty;
 
 --Values of Course
 --CE
@@ -135,7 +132,7 @@ INSERT INTO Course VALUES (101505, 'Hydraulic Engineering', 4, 101, 509);
 INSERT INTO Course VALUES (101502, 'Environmental Engineering I', 4, 101, 509);
 INSERT INTO Course VALUES (101506, 'Mechanics of Materials', 4, 101, 508);
 INSERT INTO Course VALUES (101504, 'Hydrology and Water Resources', 4, 101, 508);
-
+select * FROM Course;
 --ME
 INSERT INTO Course VALUES (102501, 'Fluid Machinery', 4, 102, 501);
 INSERT INTO Course VALUES (102502, 'Heat Transfer', 4, 102, 505);
@@ -174,76 +171,94 @@ INSERT INTO Course VALUES (119505, 'Hydrology and Water Resources', 4, 119, 508)
 INSERT INTO Course VALUES (621, 'Machine Learning', 4, 157, 523);
 INSERT INTO Course VALUES (622, 'Computer Networks', 4, 157, 523);
 INSERT INTO Course VALUES (623, 'Artificial Intelligence', 4, 157, 523);
+COMMIT;
 
+SELECT * FROM Course;
 
 --Values of Enrollment
 --CSE
 -- Student 23105128001
-INSERT INTO Enrollment VALUES (1201, '5th', 'A', 23105128001, 105501);
-INSERT INTO Enrollment VALUES (1202, '5th', 'A-', 23105128001, 105502);
-INSERT INTO Enrollment VALUES (1203, '5th', 'B+', 23105128001, 105503);
-INSERT INTO Enrollment VALUES (1204, '5th', 'A', 23105128001, 105504);
-INSERT INTO Enrollment VALUES (1205, '5th', 'B', 23105128001, 100508);
+INSERT INTO Enrollment VALUES (23105128001, 105501, '5th', 'A');
+INSERT INTO Enrollment VALUES (23105128001, 105502, '5th', 'B');
+INSERT INTO Enrollment VALUES (23105128001, 105503, '5th', 'C');
+INSERT INTO Enrollment VALUES (23105128001, 105504, '5th', 'A');
+INSERT INTO Enrollment VALUES (23105128001, 100508, '5th', 'A');
 
 -- Student 23105128002
-INSERT INTO Enrollment VALUES (1206, '5th', 'B+', 23105128002, 105501);
-INSERT INTO Enrollment VALUES (1207, '5th', 'A', 23105128002, 105502);
-INSERT INTO Enrollment VALUES (1208, '5th', 'A-', 23105128002, 105503);
-INSERT INTO Enrollment VALUES (1209, '5th', 'B', 23105128002, 105504);
-INSERT INTO Enrollment VALUES (1210, '5th', 'A', 23105128002, 100508);
+INSERT INTO Enrollment VALUES (23105128002, 105501, '5th', 'A+');
+INSERT INTO Enrollment VALUES (23105128002, 105502, '5th', 'A');
+INSERT INTO Enrollment VALUES (23105128002, 105503, '5th', 'C');
+INSERT INTO Enrollment VALUES (23105128002, 105504, '5th', 'A');
+INSERT INTO Enrollment VALUES (23105128002, 100508, '5th', 'B');
 
 -- Student 23105128003
-INSERT INTO Enrollment VALUES (1211, '5th', 'A', 23105128003, 105501);
-INSERT INTO Enrollment VALUES (1212, '5th', 'B+', 23105128003, 105502);
-INSERT INTO Enrollment VALUES (1213, '5th', 'B', 23105128003, 105503);
-INSERT INTO Enrollment VALUES (1214, '5th', 'A-', 23105128003, 105504);
-INSERT INTO Enrollment VALUES (1215, '5th', 'A', 23105128003, 100508);
+INSERT INTO Enrollment VALUES (23105128003, 105501, '5th', 'A');
+INSERT INTO Enrollment VALUES (23105128003, 105502, '5th', 'A');
+INSERT INTO Enrollment VALUES (23105128003, 105503, '5th', 'C');
+INSERT INTO Enrollment VALUES (23105128003, 105504, '5th', 'B');
+INSERT INTO Enrollment VALUES (23105128003, 100508, '5th', 'A');
+
 
 -- Student 23105128004
-INSERT INTO Enrollment VALUES (1216, '5th', 'A-', 23105128004, 105501);
-INSERT INTO Enrollment VALUES (1217, '5th', 'A', 23105128004, 105502);
-INSERT INTO Enrollment VALUES (1218, '5th', 'B+', 23105128004, 105503);
-INSERT INTO Enrollment VALUES (1219, '5th', 'B', 23105128004, 105504);
-INSERT INTO Enrollment VALUES (1220, '5th', 'A', 23105128004, 100508);
+INSERT INTO Enrollment VALUES (23105128001, 105501, '5th', 'A+');
+INSERT INTO Enrollment VALUES (23105128001, 105502, '5th', 'A');
+INSERT INTO Enrollment VALUES (23105128001, 105503, '5th', 'B');
+INSERT INTO Enrollment VALUES (23105128001, 105504, '5th', 'A+');
+INSERT INTO Enrollment VALUES (23105128001, 100508, '5th', 'A');
 
--- Student 23105128005
-INSERT INTO Enrollment VALUES (1221, '5th', 'B+', 23105128005, 105501);
-INSERT INTO Enrollment VALUES (1222, '5th', 'A-', 23105128005, 105502);
-INSERT INTO Enrollment VALUES (1223, '5th', 'A', 23105128005, 105503);
-INSERT INTO Enrollment VALUES (1224, '5th', 'B', 23105128005, 105504);
-INSERT INTO Enrollment VALUES (1225, '5th', 'A', 23105128005, 100508);
+--CSE(AIML)
+-- Student 23157128054
+INSERT INTO Enrollment VALUES (23157128054, 621, '5th', 'A+');
+INSERT INTO Enrollment VALUES (23157128054, 622, '5th', 'A+');
+INSERT INTO Enrollment VALUES (23157128054, 623, '5th', 'A');
 
--- Student 23105128006
-INSERT INTO Enrollment VALUES (1226, '5th', 'A', 23105128006, 105501);
-INSERT INTO Enrollment VALUES (1227, '5th', 'B+', 23105128006, 105502);
-INSERT INTO Enrollment VALUES (1228, '5th', 'A-', 23105128006, 105503);
-INSERT INTO Enrollment VALUES (1229, '5th', 'B', 23105128006, 105504);
-INSERT INTO Enrollment VALUES (1230, '5th', 'A', 23105128006, 100508);
+-- Student 23157128001
+INSERT INTO Enrollment VALUES (23157128001, 621, '5th', 'A+');
+INSERT INTO Enrollment VALUES (23157128001, 622, '5th', 'B');
+INSERT INTO Enrollment VALUES (23157128001, 623, '5th', 'A');
 
--- Student 23105128007
-INSERT INTO Enrollment VALUES (1231, '5th', 'A-', 23105128007, 105501);
-INSERT INTO Enrollment VALUES (1232, '5th', 'A', 23105128007, 105502);
-INSERT INTO Enrollment VALUES (1233, '5th', 'B+', 23105128007, 105503);
-INSERT INTO Enrollment VALUES (1234, '5th', 'B', 23105128007, 105504);
-INSERT INTO Enrollment VALUES (1235, '5th', 'A', 23105128007, 100508);
+-- Student 23157128002
+INSERT INTO Enrollment VALUES (23157128002, 621, '5th', 'A');
+INSERT INTO Enrollment VALUES (23157128002, 622, '5th', 'B');
+INSERT INTO Enrollment VALUES (23157128002, 623, '5th', 'A');
 
--- Student 23105128008
-INSERT INTO Enrollment VALUES (1236, '5th', 'B', 23105128008, 105501);
-INSERT INTO Enrollment VALUES (1237, '5th', 'A-', 23105128008, 105502);
-INSERT INTO Enrollment VALUES (1238, '5th', 'A', 23105128008, 105503);
-INSERT INTO Enrollment VALUES (1239, '5th', 'B+', 23105128008, 105504);
-INSERT INTO Enrollment VALUES (1240, '5th', 'A', 23105128008, 100508);
+-- Student 23157128003
+INSERT INTO Enrollment VALUES (23157128003, 621, '5th', 'A');
+INSERT INTO Enrollment VALUES (23157128003, 622, '5th', 'B');
+INSERT INTO Enrollment VALUES (23157128003, 623, '5th', 'A');
 
--- Student 23105128009
-INSERT INTO Enrollment VALUES (1241, '5th', 'A', 23105128009, 105501);
-INSERT INTO Enrollment VALUES (1242, '5th', 'B+', 23105128009, 105502);
-INSERT INTO Enrollment VALUES (1243, '5th', 'A-', 23105128009, 105503);
-INSERT INTO Enrollment VALUES (1244, '5th', 'B', 23105128009, 105504);
-INSERT INTO Enrollment VALUES (1245, '5th', 'A', 23105128009, 100508);
+--CIVIL
+-- Student 23101128001
+INSERT INTO Enrollment VALUES (23101128001, 101502, '5th', 'A');
+INSERT INTO Enrollment VALUES (23101128001, 101503, '5th', 'B');
+INSERT INTO Enrollment VALUES (23101128001, 101504, '5th', 'A');
+INSERT INTO Enrollment VALUES (23101128001, 101505, '5th', 'B');
+INSERT INTO Enrollment VALUES (23101128001, 101506, '5th', 'A+');
+INSERT INTO Enrollment VALUES (23101128001, 101507, '5th', 'B');
 
--- Student 23105128010
-INSERT INTO Enrollment VALUES (1246, '5th', 'A-', 23105128010, 105501);
-INSERT INTO Enrollment VALUES (1247, '5th', 'A', 23105128010, 105502);
-INSERT INTO Enrollment VALUES (1248, '5th', 'B+', 23105128010, 105503);
-INSERT INTO Enrollment VALUES (1249, '5th', 'B', 23105128010, 105504);
-INSERT INTO Enrollment VALUES (1250, '5th', 'A', 23105128010, 100508);
+-- Student 23101128002
+INSERT INTO Enrollment VALUES (23101128002, 101502, '5th', 'A');
+INSERT INTO Enrollment VALUES (23101128002, 101503, '5th', 'B');
+INSERT INTO Enrollment VALUES (23101128002, 101504, '5th', 'A');
+INSERT INTO Enrollment VALUES (23101128002, 101505, '5th', 'B');
+INSERT INTO Enrollment VALUES (23101128002, 101506, '5th', 'A+');
+INSERT INTO Enrollment VALUES (23101128002, 101507, '5th', 'B');
+
+-- Student 23101128003
+INSERT INTO Enrollment VALUES (23101128003, 101502, '5th', 'A');
+INSERT INTO Enrollment VALUES (23101128003, 101503, '5th', 'B');
+INSERT INTO Enrollment VALUES (23101128003, 101504, '5th', 'A');
+INSERT INTO Enrollment VALUES (23101128003, 101505, '5th', 'B');
+INSERT INTO Enrollment VALUES (23101128003, 101506, '5th', 'A+');
+INSERT INTO Enrollment VALUES (23101128003, 101507, '5th', 'B');
+
+-- Student 23101128004
+INSERT INTO Enrollment VALUES (23101128004, 101502, '5th', 'A');
+INSERT INTO Enrollment VALUES (23101128004, 101503, '5th', 'B');
+INSERT INTO Enrollment VALUES (23101128004, 101504, '5th', 'A');
+INSERT INTO Enrollment VALUES (23101128004, 101505, '5th', 'B');
+INSERT INTO Enrollment VALUES (23101128004, 101506, '5th', 'A+');
+INSERT INTO Enrollment VALUES (23101128004, 101507, '5th', 'B');
+
+COMMIT;
+SELECT * FROM Enrollment;
